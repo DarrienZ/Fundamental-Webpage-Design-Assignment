@@ -1,3 +1,100 @@
+/* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.nav-links li a:hover {
+    color: #007BFF;
+}
+
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 50%;
+    height: 2px;
+    background-color: grey;
+    transform: translateX(-50%) scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links li a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+} 
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    border-radius: px;
+    list-style: none;
+    min-width: 150px;
+    z-index: 99;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    border-radius: 5px;
+    list-style: none;
+    min-width: 150px;
+    z-index: 99;
+    top: 100%; /* Position dropdown below */
+    left: 50%; /* Move the dropdown's left edge to the middle */
+    transform: translateX(-50%); /* Shift it back by 50% of its width */
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-menu li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    text-decoration: none;
+    padding: 8px 15px;
+    height: 40px; /* Adjust height as needed */
+    width: 100%; /* Make sure it takes the full width */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
 /* Footer */
 footer {
     background-color: #333;
